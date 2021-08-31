@@ -1,0 +1,179 @@
+/* Fonts import */
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&family=Roboto+Slab:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap');
+
+
+/* Setup Variables */
+
+:root {
+/* color */
+  --beche:rgb(244,201,178);
+  --bleu:rgb(8,68,112);
+  --gray-246:rgb(246,246,246);
+  --colo-link:rgb(120,189,196);
+/* fonts */
+  --font1: 'Open Sans', sans-serif;
+  --font2:  Georgia, 'Times New Roman', Times, serif;
+  --font3: 'Roboto Slab', serif;
+  --font4: 'Roboto', sans-serif;
+}
+
+/* Some basic Reset */
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%; /*now 1.5rem = 15px*/
+  font-family: var(--font1);
+  font-weight: 600;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body, h1, h2, h4, h5, h6, p, ol, ul {
+    margin: 0;
+    padding: 0;
+    color: var(--bleu);
+}
+h2{
+    font-size: 2.3rem;
+    font-weight: 800;
+}
+h3{
+    margin: 0;
+    padding: 0;
+    color: var(--beche);
+    font-size: 1.5rem;
+}
+li{
+    font-size: 1.3rem;
+}
+ol, ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a{
+  cursor: pointer;
+  color: var(--colo-link);
+  list-style: inherit;
+  text-decoration: inherit;
+}
+
+
+
+
+
+
+
+
+
+/*************************************************************/
+
+.grid-main{
+    width: 1200px;
+    margin: 30px auto;
+
+    display: grid;
+    grid-template: repeat(4 minmax(100px,auto))/repeat(2, minmax(10px,auto));
+    gap: 20px;
+    grid-template-areas: 
+        "about-me my-picture"
+        "experiences educations"
+        "skills educations"
+        "footer footer";   
+}
+
+div{
+    background-color: var(--gray-246);
+    border: 0.3px solid rgba(148, 148, 148,0.2);
+    border-radius: 20px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+}
+.about-me{
+    grid-area: about-me; 
+    background-color: var(--beche);
+}
+.about-me h1{
+    font-size: 5rem;
+    font-weight: 800;
+}
+.about-me p{
+    font-weight: 400;
+    font-size: 1.5rem;
+    margin-top: 30px;
+    width: 450px;
+    color: white;
+}
+.my-picture{
+    grid-area: my-picture; 
+    overflow: hidden;
+    width: 300px;
+    height: 300px;
+    text-align: center;
+    padding: 0;
+}
+.my-picture img{
+    position: relative;
+    top: -50px;
+    width: 300px;
+}
+.experiences{
+    grid-area: experiences;
+}
+.experiences li{
+    margin: 15px 0;
+}
+.educations{
+    grid-area: educations; 
+    width: 300px;
+}
+.educations li{
+    margin-top: 15px;
+}
+.software{
+    margin-top: 30px;
+}
+.software-list {
+    display: flex;
+    align-items: flex-start;
+}
+.software-list li{
+    margin: 5px 35px 0 0;
+}
+.skills{
+    grid-area: skills; 
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+.skills li h2{
+    margin-bottom: 10px;
+}
+.skills li{
+    margin: 5px 0 0 0;
+}
+footer div{
+    margin: 0 20px;
+}
+footer{
+    grid-area: footer; 
+    display: flex;
+    align-items: center;
+    font-size: 1.3rem;
+}
+
+.footer-box-3 p,a{
+    display: inline-block;
+    margin: 0 10px;
+}
+footer img{
+    height: 20px;
+}
